@@ -1,0 +1,10 @@
+.header{
+  font-family: "Times New Roman", Times, serif;
+  text-align: center ;
+  background-color: lightblue;
+}
+.intro{
+  font-family: 'Times New Roman', Times, serif;
+  background-color: lightcyan;
+  border-style: ridge;
+}

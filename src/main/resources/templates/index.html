@@ -2,13 +2,37 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="UTF-8">
-	<title>Index</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" th:href="@{/css/index.css}">
+  <meta charset="UTF-8">
+  <title>Index</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" th:href="@{/css/index.css}">
 </head>
 
 <body>
+  <br><br><br>
+  <h1 class="header">Personal Book Library</h1>
+  <br><br>
+  <p class="intro">Welcome to Bookshelf Haven, your digital sanctuary for organizing, exploring, and immersing yourself
+    in
+    the world of literature. In this fast-paced digital age, where information is at our fingertips, managing your
+    personal book collection should be a seamless and delightful experience. Enter Bookshelf Haven – a personalized book
+    library web application designed to cater to avid readers, book enthusiasts, and those seeking an organized oasis
+    for
+    their literary treasures.</p>
+  <br><br>
+
+  <div class="text-center">
+    <p class="text-success">So Get yourself organized through our advanced application </p>
+    <form th:action="@{/login}" method="get">
+      <button class="btn btn-outline-primary btn-lg" type="submit">Login</button>
+    </form>
+  </div>
+  <br>
+  <div class="text-center">
+    <p class="text-primary">Haven't Logged in yet?</p>
+
+    <button class="btn btn-outline-primary btn-lg">Register</button>
+  </div>
 
 </body>
 
