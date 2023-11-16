@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 public class Book {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private long sl;
+  private Long sl;
   @Column(name = "Book Name", nullable = false)
   private String bookname;
   @Column(name = "Author Name", nullable = false)

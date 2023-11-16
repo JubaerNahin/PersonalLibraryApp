@@ -13,9 +13,16 @@ public class BookController {
   @Autowired
   private BookService bookService;
 
-  @GetMapping("/login/home")
-  public String ListOfBooks(Model model){
-    model.addAttribute("book", bookService.getallBooks());
-    return "home";
+   @GetMapping("/login/home/addongoing")
+   public String addongoing(Model model){
+    return "add_ongoing";
+  }
+  @GetMapping("/login/home/donereading")
+  public String donereading(Model model){
+    return "done_reading";
+  }
+  @GetMapping("/login/home/wishlist")
+   public String wishlist(Model model){
+    return "wishlist";
   }
 }

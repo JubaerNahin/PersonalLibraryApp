@@ -57,15 +57,18 @@
        </tbody>
       </thead>
 		</table>
-  </div>
-  <div class="row">
-    <div class="col-lg-3">
-      <a th:href="@{/login/home/wishlist}" class="btn btn-primary btn-sm mb-3">Wishlist</a>
+    <div class="row">
+      <div class="cols-lg-3">
+        <p>Check Wishlist here</p>
+        <a th:href="@{/login/home/wishlist}" class="btn btn-primary btn-sm mb-3">Wishlist</a>
+      </div>
+      <div class="col-lg-3">
+        <p>Check Done Reading here</p>
+        <a th:href="@{/login/home/donereading}" class="btn btn-primary btn-sm mb-3">Done Reading</a>
+      </div>
     </div>
-    <div class="col-lg-3">
-      <a th:href="@{/login/home/donereading}" class="btn btn-primary btn-sm mb-3">Done Reading</a>
-    </div>
   </div>
+  
   <!-- Bootstrap JS and Popper.js (required for dropdowns) -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
