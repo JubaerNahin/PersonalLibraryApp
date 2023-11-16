@@ -32,7 +32,40 @@
       </div>
     </div>
   </nav>
-
+  <br><br>
+  <div class="container">
+    <div class="col-lg-3">
+      <a th:href="@{/login/home/addongoing}" class="btn btn-primary btn-sm mb-3">Add Ongoing Books</a>
+    </div>
+  <div>
+      <h1 class="bg-light text-center">Books Ongoing</h1>
+  </div>
+  
+  <table class="table table-striped table-hover table-bordered">
+    <thead class="table-light">
+      <tr>
+        <th>Book Name</th>
+        <th>Author Name</th>
+        <th>Book Summary</th>
+      </tr>
+        <tbody>
+          <tr th:each="Book : ${book}">
+            <td th:text="${Book.bookname}"></td>
+            <td th:text="${Book.authname}"></td>
+            <td th:text="${Book.booksummary}"></td>
+          </tr>  
+       </tbody>
+      </thead>
+		</table>
+  </div>
+  <div class="row">
+    <div class="col-lg-3">
+      <a th:href="@{/login/home/wishlist}" class="btn btn-primary btn-sm mb-3">Wishlist</a>
+    </div>
+    <div class="col-lg-3">
+      <a th:href="@{/login/home/donereading}" class="btn btn-primary btn-sm mb-3">Done Reading</a>
+    </div>
+  </div>
   <!-- Bootstrap JS and Popper.js (required for dropdowns) -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
