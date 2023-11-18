@@ -2,17 +2,38 @@ package com.project.booklibrary.Service.Impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.booklibrary.Entity.Book;
+import com.project.booklibrary.Entity.DoneReading;
+import com.project.booklibrary.Entity.Wishlist;
 import com.project.booklibrary.Repository.BookRepository;
+import com.project.booklibrary.Repository.DoneReadingRepository;
+import com.project.booklibrary.Repository.WishlistRepository;
 import com.project.booklibrary.Service.BookService;
 
 @Service
 public class BookServiceImpl implements BookService{
-  private BookRepository bookRepository;
 
-  public BookServiceImpl(BookRepository bookRepository) {
+  @Autowired
+	private BookRepository bookRepository;
+	@Autowired
+	private DoneReadingRepository doneReadingRepository;
+	@Autowired
+	private WishlistRepository wishlistRepository;
+
+
+  
+
+  public BookServiceImpl() {
+	}
+	public BookServiceImpl(DoneReadingRepository doneReadingRepository, WishlistRepository wishlistRepository) {
+		super();
+		this.doneReadingRepository = doneReadingRepository;
+		this.wishlistRepository = wishlistRepository;
+	}
+	public BookServiceImpl(BookRepository bookRepository) {
     super();
     this.bookRepository = bookRepository;
   }
@@ -24,19 +45,28 @@ public class BookServiceImpl implements BookService{
 	public Book addBook(Book book) {
 		return bookRepository.save(book);
 	}
-
 	@Override
 	public Book getBookBysl(Long sl) {
 		return bookRepository.findById(sl).get();
 	}
 
 	@Override
-	public Book updateBook(Book book) {
-		return bookRepository.save(book);
+	public Wishlist updateWishlist(Wishlist wishlist) {
+		return wishlistRepository.save(wishlist);
 	}
 
 	@Override
 	public void deleteBook(Long sl) {
 		bookRepository.deleteById(sl);
 	}
+	@Override
+	public List<Wishlist> getallWishlists(){
+	     return	wishlistRepository.findAll();
+	}
+
+	@Override
+	public List<DoneReading> getallDoneReadings(){
+	     return	doneReadingRepository.findAll();
+	}
+	
 }

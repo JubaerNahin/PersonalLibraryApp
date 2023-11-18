@@ -9,7 +9,61 @@
 </head>
 
 <body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Personal Book Libray Application</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+        <form class="d-flex">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Some Useful links
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="https://openlibrary.org/">Open Library</a></li>
+              <li><a class="dropdown-item" href="https://bookboon.com/">bookboon</a></li>
+              <li><a class="dropdown-item" href="https://www.rokomari.com/book">Rokomari</a></li>
+            </ul>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <br><br>
+  <div class="container">
+    <div>
+      <h1 class="bg-light text-center">Wishlist</h1>
+    </div>
 
+    <table class="table table-striped table-hover table-bordered">
+      <thead class="table-light">
+        <tr>
+          <th>Book Name</th>
+          <th>Author Name</th>
+          <th>Book Summary</th>
+					<th>Operation</th>
+        </tr>
+      <tbody>
+        <tr th:each="Wishlist : ${wishlist}">
+          <td th:text="${Wishlist.bookname}"></td>
+          <td th:text="${Wishlist.authname}"></td>
+          <td th:text="${Wishlist.booksummary}"></td>
+					<td>
+            <a th:href="@{/login/home/{sl}(sl=${Book.sl})}" class="btn btn-danger">Delete</a>
+          </td>
+        </tr>
+      </tbody>
+      </thead>
+    </table>
+
+		 <!-- Bootstrap JS and Popper.js (required for dropdowns) -->
+		 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+		 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

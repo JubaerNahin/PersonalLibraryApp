@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Finished Reading Books</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{/css/index.css}">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Personal Book Libray Application</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+        <form class="d-flex">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Some Useful links
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="https://openlibrary.org/">Open Library</a></li>
+              <li><a class="dropdown-item" href="https://bookboon.com/">bookboon</a></li>
+              <li><a class="dropdown-item" href="https://www.rokomari.com/book">Rokomari</a></li>
+            </ul>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+    <div class="container">
+      <div class="row">
+           <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+                 <h1 class="center">Add Ongoing Book</h1>
+                 <div class="card-body">
+                  <form th:action="@{/login/home}" th:object="${book}" method="POST">
+                     <div class="form-group">
+                      <label>Book Name</label>
+                      <input type="text" name="bookname" th:field="*{bookname}" class="form-control" placeholder="Enter Book Name"> 
+                     </div>
+                     <div class="form-group">
+                      <label>Author Name</label>
+                      <input type="text" name="authname" th:field="*{authname}" class="form-control" placeholder="Enter Author Name"> 
+                     </div> 
+                     <div class="form-group">
+                      <label>Book Summary</label>
+                      <input type="text" name="booksummary" th:field="*{booksummary}" class="form-control" placeholder="Enter Book Summary"> 
+                     </div>  
+                     <br>
+                     <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">
+                          Add Book
+                        </button>
+                     </div>
+                  </form>
+
+                 </div>
+           </div>  
+      </div>
+    
+    </div>
+
+  		 <!-- Bootstrap JS and Popper.js (required for dropdowns) -->
+       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js"></script>
+  </body>
+  
+  </html>

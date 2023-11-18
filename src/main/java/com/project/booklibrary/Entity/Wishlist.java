@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Books")
+@Table(name = "wishlist")
 public class Wishlist{
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
