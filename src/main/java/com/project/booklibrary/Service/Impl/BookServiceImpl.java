@@ -16,7 +16,7 @@ import com.project.booklibrary.Service.BookService;
 @Service
 public class BookServiceImpl implements BookService{
 
-  @Autowired
+    @Autowired
 	private BookRepository bookRepository;
 	@Autowired
 	private DoneReadingRepository doneReadingRepository;
@@ -51,8 +51,8 @@ public class BookServiceImpl implements BookService{
 	}
 
 	@Override
-	public Wishlist updateWishlist(Wishlist wishlist) {
-		return wishlistRepository.save(wishlist);
+	public void MoveToWishlist(Long sl) {
+		
 	}
 
 	@Override

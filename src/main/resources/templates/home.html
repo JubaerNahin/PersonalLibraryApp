@@ -57,7 +57,7 @@
           <td th:text="${Book.authname}"></td>
           <td th:text="${Book.booksummary}"></td>
           <td>
-            <a th:href="@{/login/home/{sl}(sl=${Book.sl})}" class="btn btn-success">Move to Wishlist</a>
+          <a th:href="@{/login/home/wishlist1/{sl}(sl=${Book.sl})}" class="btn btn-success">Move to Wishlist</a>
             <a th:href="@{/login/home/{sl}(sl=${Book.sl})}" class="btn btn-success">Done Reading</a>
             <a th:href="@{/login/home/{sl}(sl=${Book.sl})}" class="btn btn-danger">Delete</a>
           </td>

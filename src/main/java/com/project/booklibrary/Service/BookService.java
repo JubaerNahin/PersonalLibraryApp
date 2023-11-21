@@ -16,7 +16,7 @@ public interface BookService {
 
     public Book getBookBysl(Long sl);
 
-    public Wishlist updateWishlist(Wishlist wishlist);
+    public void MoveToWishlist(Long sl);
 
     public void deleteBook(Long sl);
 
