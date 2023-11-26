@@ -20,6 +20,10 @@ public interface BookService {
 
     public void deleteBook(Long sl);
 
+    public void deleteWishlist(Long sl);
+
+    public void deleteDonereading(Long sl);
+
     public List<Wishlist> getallWishlists();
 
     public List<DoneReading> getallDoneReadings();

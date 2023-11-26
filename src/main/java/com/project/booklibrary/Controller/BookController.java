@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.project.booklibrary.Entity.Book;
+import com.project.booklibrary.Entity.DoneReading;
 import com.project.booklibrary.Entity.Wishlist;
 import com.project.booklibrary.Repository.BookRepository;
 import com.project.booklibrary.Repository.DoneReadingRepository;
@@ -43,7 +44,7 @@ public class BookController {
 
   @GetMapping("/login/home/wishlist")
   public String wishlist(Model model) {
-    model.addAttribute("wishlist", bookService.getallWishlists());
+    model.addAttribute("Wishlist", bookService.getallWishlists());
     return "wishlist";
   }
 
@@ -52,6 +53,19 @@ public class BookController {
     bookService.deleteBook(sl);
     return "redirect:/login/home";
   }
+
+  @GetMapping("/login/home/wishlist/{sl}")
+  public String DeleteWishlist(@PathVariable Long sl) {
+    bookService.deleteWishlist(sl);
+    return "redirect:/login/home/wishlist";
+  }
+
+  @GetMapping("/login/home/donereading/{sl}")
+  public String deleteDonereading(@PathVariable Long sl) {
+    bookService.deleteDonereading(sl);
+    return "redirect:/login/home/donereading";
+  }
+
 
   @GetMapping("/login/home/addongoing")
   public String addOngoing(Model model) {
@@ -77,6 +91,19 @@ public class BookController {
     wishlist.setBooksummary(book.getBooksummary());
 
     wishlistRepository.save(wishlist);
+    return "redirect:/login/home";
+  }
+  @GetMapping("/login/home/donereading1/{sl}")
+  public String MoveToDoneReading(@PathVariable Long sl){
+    Optional<Book> optionalbook = bookRepository.findById(sl);   
+    Book book = optionalbook.get();
+    DoneReading doneReading = new DoneReading();  
+    doneReading.setSl(book.getSl());
+    doneReading.setAuthname(book.getAuthname());
+    doneReading.setBookname(book.getBookname());
+    doneReading.setBooksummary(book.getBooksummary());
+
+    doneReadingRepository.save(doneReading);
     return "redirect:/login/home";
   }
 }

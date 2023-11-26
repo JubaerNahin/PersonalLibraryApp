@@ -49,12 +49,12 @@
 					<th>Operation</th>
         </tr>
       <tbody>
-        <tr th:each="Wishlist : ${wishlist}">
+        <tr th:each="Wishlist : ${Wishlist}">
           <td th:text="${Wishlist.bookname}"></td>
           <td th:text="${Wishlist.authname}"></td>
           <td th:text="${Wishlist.booksummary}"></td>
 					<td>
-            <a th:href="@{/login/home/{sl}(sl=${Book.sl})}" class="btn btn-danger">Delete</a>
+            <a th:href="@{/login/home/wishlist/{sl}(sl=${Wishlist.sl})}" class="btn btn-danger">Delete</a>
           </td>
         </tr>
       </tbody>

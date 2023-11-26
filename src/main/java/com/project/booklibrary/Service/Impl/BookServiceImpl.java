@@ -59,6 +59,16 @@ public class BookServiceImpl implements BookService{
 	public void deleteBook(Long sl) {
 		bookRepository.deleteById(sl);
 	}
+
+	@Override
+	public void deleteWishlist(Long sl) {
+		wishlistRepository.deleteById(sl);
+	}
+
+	@Override
+	public void deleteDonereading(Long sl) {
+		doneReadingRepository.deleteById(sl);
+	}
 	@Override
 	public List<Wishlist> getallWishlists(){
 	     return	wishlistRepository.findAll();

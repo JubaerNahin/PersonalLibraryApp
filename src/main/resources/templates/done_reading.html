@@ -36,9 +36,6 @@
   </nav>
   <br><br>
   <div class="container">
-    <div class="col-lg-3">
-      <a th:href="@{/login/home/addongoing}" class="btn btn-primary btn-sm mb-3">Add Ongoing Books</a>
-    </div>
     <div>
       <h1 class="bg-light text-center">Books Ongoing</h1>
     </div>
@@ -57,7 +54,7 @@
           <td th:text="${done.authname}"></td>
           <td th:text="${done.booksummary}"></td>
           <td>
-            <a th:href="@{/login/home/{sl}(sl=${Book.sl})}" class="btn btn-danger">Delete</a>
+            <a th:href="@{/login/home/donereading/{sl}(sl=${done.sl})}" class="btn btn-danger">Delete</a>
           </td>
         </tr>
       </tbody>
