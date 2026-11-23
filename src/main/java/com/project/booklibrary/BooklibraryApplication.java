@@ -5,14 +5,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 
-
 @SpringBootApplication
 @ComponentScan
-public class BooklibraryApplication{
+public class BooklibraryApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(BooklibraryApplication.class, args);
-	}
-	
+    public static void main(String[] args) {
+        SpringApplication.run(BooklibraryApplication.class, args);
+    }
+
 
 }
